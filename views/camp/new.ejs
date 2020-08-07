@@ -1,0 +1,18 @@
+<%- include ("../partials/header") %>
+
+<li><a href="/camp">HOME</a></li>
+<%if(!currentUser){%>
+    <li><a href="/login">LOGIN</a></li>
+    <li><a href="/register">REGISTER</a></li>
+<%}else{%>
+    <li><a href="/logout">LOGOUT</a></li>
+<%}%>
+
+<form action="/camp/new" method="POST">
+    <li><input type="text" placeholder="name" name="name" required></li>
+    <li><input type="text" placeholder="image" name="image" required></li>
+    <li><textarea name="description" required></textarea></li>
+    <button>SUBMIT</button>
+</form>
+
+<%- include ("../partials/footer") %>

@@ -1,0 +1,18 @@
+<%- include ("../partials/header") %>
+
+<a href="/camp">HOME</a>
+<%if(!currentUser){%>
+    <li><a href="/login">LOGIN</a></li>
+    <li><a href="/register">REGISTER</a></li>
+<%}else{%>
+    <li><a href="/logout">LOGOUT</a></li>
+<%}%>
+
+<form action="/camp/edit/<%=camp._id%>?_method=PUT" method="POST">
+    <li><input type="text" value="<%=camp.name%>" name="all[name]"></li>
+    <li><input type="text" value="<%=camp.image%>" name="all[image]"></li>
+    <li><textarea name="all[description]"><%=camp.description%></textarea></li>
+    <button>SUBMIT</button>
+</form>
+
+<%- include ("../partials/footer") %>

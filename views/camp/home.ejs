@@ -1,0 +1,19 @@
+<%- include ("../partials/header") %>
+
+<li><a href="/camp">HOME</a></li>
+<li><a href="/camp/new">NEW</a></li>
+
+<%if(!currentUser){%>
+    <li><a href="/login">LOGIN</a></li>
+    <li><a href="/register">REGISTER</a></li>
+<%}else{%>
+    <li><a href="/logout">LOGOUT</a></li>
+<%}%>
+
+<% camp.forEach((val)=>{ %>
+    <li><h3><%= val.name %></h3></li>
+    <li><img src="<%= val.image %>"></li>
+    <li><a href="/camp/show/<%=val._id%>">READ MORE</a></li>
+<%});%>
+
+<%- include ("../partials/footer") %>
