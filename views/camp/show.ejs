@@ -1,0 +1,72 @@
+<%- include ("../partials/header") %>
+
+<nav class="navbar navbar-expand">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul id="menu-main-nav" class="navbar-nav nav-fill w-100">
+          <li id="menu-item-42" class="nav-item  menu-item-42"><a href="/camp" class="nav-link">HOME</a></li>
+          <li id="menu-item-963" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-963"><a href="/camp/new" class="nav-link">NEW</a></li>
+          <%if(!currentUser){%>
+              <li id="menu-item-40" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="/login" class="nav-link">LOGIN</a></li>
+              <li id="menu-item-40" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="/register" class="nav-link">REGISTER</a></li>
+          <%}else{%>        
+              <li id="menu-item-42" class="nav-item  menu-item-42"><a href="/logout" class="nav-link">LOGOUT</a></li>
+          <%}%>
+      </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="card">
+    <img
+      src="<%= camp.image %>"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <h5 class="card-title">Name: <%= camp.name %></h5>
+      <h5 class="card-title">Author: <%= camp.author.username %></h5>
+      <h5 class="card-title">Description: <%= camp.author.username %></h5>
+    </div>
+
+    <div>
+        <a href='/camp/edit/<%=camp._id%>' class="btn btn-primary">EDIT POST</a></li>
+
+        <form action="/camp/delete/<%=camp._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">DELETE POST</button>
+        </form>
+    </div>
+
+  </div>
+
+<br/><br/><br/><br/>
+
+<a href="/camp/<%=camp._id%>/comment/new" class="btn btn-outline-primary">ADD NEW COMMENT</a>
+
+<br/><br/><br/><br/>
+
+<% camp.comments.forEach((val)=>{ %>
+    <div class="card">
+        <span class="border border-info">
+            <div class="card-body">
+                <p class="card-title" >
+                    <p>Comment: <%= val.desc %></p>
+                    <p>By: <%= val.author.username %></p>
+
+                    <div>
+                        <a href="/camp/<%=camp._id%>/comment/edit/<%=val._id%>" class="btn btn-outline-warning">EDIT COMMENT</a>
+            
+                        <form action="/camp/<%=camp._id%>/comment/delete/<%=val._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-outline-danger">DELETE COMMENT</button>
+                        </form>
+                    </div>
+                </p>
+            </div>
+        </span>    
+    </div>
+
+    <br/><br/><br/><br/>
+
+<% }); %>
+
+<%- include ("../partials/footer") %> 

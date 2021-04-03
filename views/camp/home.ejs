@@ -1,0 +1,45 @@
+<%- include ("../partials/header") %>
+
+<div class="jumbotron">
+    <h1>This is Blog Management Project!!</h1>
+</div>
+
+<nav class="navbar navbar-expand">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul id="menu-main-nav" class="navbar-nav nav-fill w-100">
+        <li id="menu-item-42" class="nav-item  menu-item-42"><a href="/camp" class="nav-link">HOME</a></li>
+        <li id="menu-item-963" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-963"><a href="/camp/new" class="nav-link">NEW</a></li>
+        <%if(!currentUser){%>
+            <li id="menu-item-40" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="/login" class="nav-link">LOGIN</a></li>
+            <li id="menu-item-40" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="/register" class="nav-link">REGISTER</a></li>
+        <%}else{%>        
+            <li id="menu-item-42" class="nav-item  menu-item-42"><a href="/logout" class="nav-link">LOGOUT</a></li>
+        <%}%>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<br/>
+
+<div class="col">
+    <% camp.forEach((val)=>{ %>
+        <div class="card">
+            <img
+              src="<%= val.image %>"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Name: <%= val.name %></h5>
+              <h5 class="card-title">Author: <%= val.author.username %></h5>
+              <a href="/camp/show/<%=val._id%>" class="btn btn-primary">READ MORE</a>
+            </div>
+          </div>
+          
+          <br/>
+    <%});%>
+</div>
+
+<%- include ("../partials/footer") %>
