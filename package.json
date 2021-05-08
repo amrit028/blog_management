@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "blog",
+=======
+  "name": "login",
+>>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -20,6 +24,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1"
+<<<<<<< HEAD
   },
   "devDependencies": {},
   "keywords": [
@@ -27,4 +32,7 @@
     "express",
     "firebase"
   ]
+=======
+  }
+>>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
 }

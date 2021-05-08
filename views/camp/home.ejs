@@ -1,5 +1,6 @@
 <%- include ("../partials/header") %>
 
+<<<<<<< HEAD
 <div class="jumbotron">
     <h1>This is Blog Management Project!!</h1>
 </div>
@@ -41,5 +42,22 @@
           <br/>
     <%});%>
 </div>
+=======
+<li><a href="/camp">HOME</a></li>
+<li><a href="/camp/new">NEW</a></li>
+
+<%if(!currentUser){%>
+    <li><a href="/login">LOGIN</a></li>
+    <li><a href="/register">REGISTER</a></li>
+<%}else{%>
+    <li><a href="/logout">LOGOUT</a></li>
+<%}%>
+
+<% camp.forEach((val)=>{ %>
+    <li><h3><%= val.name %></h3></li>
+    <li><img src="<%= val.image %>"></li>
+    <li><a href="/camp/show/<%=val._id%>">READ MORE</a></li>
+<%});%>
+>>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
 
 <%- include ("../partials/footer") %>

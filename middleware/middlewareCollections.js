@@ -27,7 +27,11 @@ middleObj.check_camp_ownership = function (req,res,next){
                 return next();
             }
 
+<<<<<<< HEAD
             req.flash("error","Your are not correct owner for this post!!!");
+=======
+            req.flash("error","Your are not correct owner for this camp!!!");
+>>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
             res.redirect("back");
         }
     });

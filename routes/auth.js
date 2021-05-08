@@ -38,7 +38,11 @@ route.get("/login",(req,res)=>{
 
 route.post("/login",passport.authenticate("local",{
     successRedirect:"/camp",
+<<<<<<< HEAD
     successFlash:"Welcome!",
+=======
+    successFlash:"Welcome!!!",
+>>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
     failureRedirect:"/login",
     failureFlash:true
     }),(req,res)=>{
@@ -50,4 +54,8 @@ route.get("/logout",(req,res)=>{
     res.redirect("/");
 });
 
+<<<<<<< HEAD
 module.exports=route;
+=======
+module.exports=route;
+>>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
