@@ -1,6 +1,5 @@
 <%- include ("../partials/header") %>
 
-<<<<<<< HEAD
 <nav class="navbar navbar-expand">
     <div class="container">
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -39,21 +38,5 @@
         </div>
     </span>    
 </div>
-=======
-<a href="/camp">HOME</a>
-<%if(!currentUser){%>
-    <li><a href="/login">LOGIN</a></li>
-    <li><a href="/register">REGISTER</a></li>
-<%}else{%>
-    <li><a href="/logout">LOGOUT</a></li>
-<%}%>
-
-<form action="/camp/edit/<%=camp._id%>?_method=PUT" method="POST">
-    <li><input type="text" value="<%=camp.name%>" name="all[name]"></li>
-    <li><input type="text" value="<%=camp.image%>" name="all[image]"></li>
-    <li><textarea name="all[description]"><%=camp.description%></textarea></li>
-    <button>SUBMIT</button>
-</form>
->>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
 
 <%- include ("../partials/footer") %>

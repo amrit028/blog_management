@@ -74,6 +74,8 @@ route.put("/camp/edit/:id",middleware.check_camp_ownership,(req,res)=>{
         }
         else
         {
+            console.log(val);
+            
             res.redirect("/camp/show/"+req.params.id);
         }
     });

@@ -63,7 +63,3 @@ app.use(commentroute);
 app.listen(PORT,(err)=>{
     console.log("SERVER IS RUNNING.....");
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130

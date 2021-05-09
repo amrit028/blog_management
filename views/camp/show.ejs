@@ -1,6 +1,5 @@
 <%- include ("../partials/header") %>
 
-<<<<<<< HEAD
 <nav class="navbar navbar-expand">
     <div class="container">
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -27,7 +26,7 @@
     <div class="card-body">
       <h5 class="card-title">Name: <%= camp.name %></h5>
       <h5 class="card-title">Author: <%= camp.author.username %></h5>
-      <h5 class="card-title">Description: <%= camp.author.username %></h5>
+      <h5 class="card-title">Description: <%= camp.description %></h5>
     </div>
 
     <div>
@@ -43,39 +42,10 @@
 <br/><br/><br/><br/>
 
 <a href="/camp/<%=camp._id%>/comment/new" class="btn btn-outline-primary">ADD NEW COMMENT</a>
-=======
-<li><a href="/camp">HOME</a></li>
-<li><a href='/camp/new'>NEW</a></li>
-
-<%if(!currentUser){%>
-    <li><a href="/login">LOGIN</a></li>
-    <li><a href="/register">REGISTER</a></li>
-<%}else{%>
-    <li><a href="/logout">LOGOUT</a></li>
-<%}%>
-
-<h3><%=currentUser._id%></h3>
-<h3><%=camp._id%></h3>
-
-<li><h1><%= camp.author.username %></h1></li>
-<br/><br/>
-<li><h3><%= camp.name %></h3></li>
-<li><img src="<%= camp.image %>"></li>
-<li><h3><%= camp.description %></h3></li>
-
-<li><a href='/camp/edit/<%=camp._id%>' class="btn btn-primary">EDIT</a></li>
-
-<form action="/camp/delete/<%=camp._id%>?_method=DELETE" method="POST">
-    <button class="btn btn-danger">DELETE</button>
-</form>
-
-<strong>.........................................</strong>
->>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
 
 <br/><br/><br/><br/>
 
 <% camp.comments.forEach((val)=>{ %>
-<<<<<<< HEAD
     <div class="card">
         <span class="border border-info">
             <div class="card-body">
@@ -92,10 +62,10 @@
                     </div>
                 </p>
             </div>
-        </span>    
+        </span>
+        <br/><br/><br/><br/>
     </div>
-=======
-    <li><h2><%= val.author.username %></h2></li>
+    <!-- <li><h2><%= val.author.username %></h2></li>
     <li><h3><%= val.desc %></h3></li>
 
     <li><a href="/camp/<%=camp._id%>/comment/edit/<%=val._id%>">EDIT COMMENT</a></li>
@@ -104,19 +74,15 @@
     <form action="/camp/<%=camp._id%>/comment/delete/<%=val._id%>?_method=DELETE" method="POST">
         <button>DELETE COMMENT</button>
     </form>
->>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
 
-    <br/><br/><br/><br/>
+    <br/><br/><br/><br/> -->
 
 <% }); %>
 
-<<<<<<< HEAD
-=======
-<strong>.........................................</strong>
+<!-- <strong>.........................................</strong>
 
 <br/><br/><br/><br/>
 
-<li><a href="/camp/<%=camp._id%>/comment/new">ADD NEW COMMENT</a></li>
+<li><a href="/camp/<%=camp._id%>/comment/new">ADD NEW COMMENT</a></li> -->
 
->>>>>>> 2c09b8a5ccd4f0c5a12d4d370cd32c9db189c130
 <%- include ("../partials/footer") %> 
